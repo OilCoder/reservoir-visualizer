@@ -1,0 +1,9 @@
+app:
+  title: "Reservoir Visualizer"
+  demo_field: "El Dorado"
+  max_demo_wells: 18
+
+render:
+  single_well_width_ft: 200.0
+  multi_well_grid_n: 40
+  figure_height_px: 650

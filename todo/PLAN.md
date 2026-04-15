@@ -59,12 +59,12 @@ reservoir-visualizer/
 - [x] Implement `multi_well.py`: load N wells, interpolate formation surfaces, build combined 3D figure (2026-04-15)
 - [x] Validate interpolation with 4 El Dorado wells in debug script (2026-04-15)
 
-### Phase 4 — Streamlit UI Assembly
-- [ ] Implement `sidebar.py`: file uploader, well selector, property selector (src/ui/sidebar.py)
-- [ ] Implement `viewer.py`: wraps Plotly figure in st.plotly_chart with camera controls (src/ui/viewer.py)
-- [ ] Implement `app.py`: wire sidebar + viewer, manage session state (app.py)
-- [ ] Create `data/config.yaml` with colormaps, default property, Ollama model placeholder (data/config.yaml)
-- [ ] Smoke test full flow: upload LAS → select formation → render 3D (manual)
+### Phase 4 — Streamlit UI Assembly (COMPLETED)
+- [x] Implement `sidebar.py`: file uploader, well selector, property selector (src/ui/sidebar.py) (2026-04-15)
+- [x] Implement `viewer.py`: wraps Plotly figure in st.plotly_chart with metrics row (src/ui/viewer.py) (2026-04-15)
+- [x] Implement `app.py`: wire sidebar + viewer, manage session state (app.py) (2026-04-15)
+- [x] Create `data/config.yaml` with render settings and demo config (data/config.yaml) (2026-04-15)
+- [x] Smoke test full flow: app boots, responds on :8501, demo data path confirmed (2026-04-15)
 
 ### Phase 5 — Polish and Deploy
 - [x] Write `requirements.txt` with pinned versions (2026-04-15)

@@ -24,8 +24,8 @@ flowchart TD
 | `formation_parser.py` | `meta: dict` (raw LAS header) | `formations: list[dict]` with `name`, `top_ft`, `base_ft` |
 | `single_well.py` | `formations`, `curves`, `property_name` | `fig: plotly.graph_objects.Figure` |
 | `multi_well.py` | `list[well_data]`, `property_name` | `fig: plotly.graph_objects.Figure` |
-| `sidebar.py` | Streamlit session | `uploaded_files`, `selected_wells`, `selected_property` |
-| `viewer.py` | `fig` | Rendered 3D chart in Streamlit |
+| `sidebar.py` | `wells_data: list[dict]` | `{view_mode, selected_well_idx, selected_formations}` |
+| `viewer.py` | `fig: Figure`, `wells_data: list[dict]` | Metrics row + rendered 3D chart in Streamlit |
 
 ## Data model
 
