@@ -42,12 +42,12 @@ reservoir-visualizer/
 ## Phases
 
 ### Phase 1 — LAS Loading and Formation Parsing
-- [ ] Explore Arroyo LAS files and document available curves and ~Other section format (src/las/)
-- [ ] Implement `loader.py`: read LAS file, return curves as DataFrame + well metadata dict (src/las/loader.py)
-- [ ] Implement `formation_parser.py`: extract tops/bases dict from ~Other section (src/las/formation_parser.py)
+- [x] Explore El Dorado LAS files and document ~Other section format (2026-04-15)
+- [x] Implement `loader.py`: read LAS file, return curves as DataFrame + well metadata dict (2026-04-15)
+- [x] Implement `formation_parser.py`: extract tops/bases dict from ~Other section (2026-04-15)
 - [x] Add El Dorado field LAS files to data/demo/ (2026-04-15)
-- [ ] Write `test_loader.py` covering: valid file, missing curves, null handling (tests/test_loader.py)
-- [ ] Write `test_formation_parser.py` covering: standard format, missing tops, empty section (tests/test_formation_parser.py)
+- [x] Write `test_loader.py` covering: valid file, missing curves, null handling (2026-04-15)
+- [x] Write `test_formation_parser.py` covering: standard format, missing tops, empty section (2026-04-15)
 
 ### Phase 2 — Single Well 3D Render
 - [ ] Define formation color scheme and property-to-color mapping (src/render/single_well.py)
