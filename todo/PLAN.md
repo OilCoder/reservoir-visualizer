@@ -51,9 +51,9 @@ reservoir-visualizer/
 - [x] Implement `lithology_map.py`: formation→lithology (KGS Bulletin 189) + lithology→color (USGS TM 11-B1) (2026-04-15)
 - [x] Write `test_lithology_map.py`: exact match, fallback, hex format, palette completeness (2026-04-15)
 
-### Phase 2 — Single Well 3D Render
-- [ ] Implement `single_well.py`: build Plotly 3D figure from one well's formations colored by lithology (src/render/single_well.py)
-- [ ] Validate render with a real El Dorado LAS file in a debug script (debug/dbg_single_well_render.py)
+### Phase 2 — Single Well 3D Render (COMPLETED)
+- [x] Implement `single_well.py`: build Plotly 3D figure from one well's formations colored by lithology (2026-04-15)
+- [x] Validate render with a real El Dorado LAS file in a debug script (2026-04-15)
 
 ### Phase 3 — Multi-Well Interpolation and Render
 - [ ] Implement `multi_well.py`: load N wells, interpolate formation surfaces, build combined 3D figure (src/render/multi_well.py)

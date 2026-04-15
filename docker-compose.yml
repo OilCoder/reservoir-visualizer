@@ -8,6 +8,7 @@ services:
       - ./src:/app/src
       - ./data:/app/data
       - ./tests:/app/tests
+      - ./debug:/app/debug
       - ./app.py:/app/app.py
     environment:
       - PYTHONUNBUFFERED=1
