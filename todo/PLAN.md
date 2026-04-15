@@ -41,18 +41,19 @@ reservoir-visualizer/
 
 ## Phases
 
-### Phase 1 — LAS Loading and Formation Parsing
+### Phase 1 — LAS Loading and Formation Parsing (COMPLETED)
 - [x] Explore El Dorado LAS files and document ~Other section format (2026-04-15)
 - [x] Implement `loader.py`: read LAS file, return curves as DataFrame + well metadata dict (2026-04-15)
 - [x] Implement `formation_parser.py`: extract tops/bases dict from ~Other section (2026-04-15)
 - [x] Add El Dorado field LAS files to data/demo/ (2026-04-15)
 - [x] Write `test_loader.py` covering: valid file, missing curves, null handling (2026-04-15)
 - [x] Write `test_formation_parser.py` covering: standard format, missing tops, empty section (2026-04-15)
+- [x] Implement `lithology_map.py`: formation→lithology (KGS Bulletin 189) + lithology→color (USGS TM 11-B1) (2026-04-15)
+- [x] Write `test_lithology_map.py`: exact match, fallback, hex format, palette completeness (2026-04-15)
 
 ### Phase 2 — Single Well 3D Render
-- [ ] Define formation color scheme and property-to-color mapping (src/render/single_well.py)
-- [ ] Implement `single_well.py`: build Plotly 3D figure from one well's formations (src/render/single_well.py)
-- [ ] Validate render with a real Arroyo LAS file in a debug script (debug/dbg_single_well_render.py)
+- [ ] Implement `single_well.py`: build Plotly 3D figure from one well's formations colored by lithology (src/render/single_well.py)
+- [ ] Validate render with a real El Dorado LAS file in a debug script (debug/dbg_single_well_render.py)
 
 ### Phase 3 — Multi-Well Interpolation and Render
 - [ ] Implement `multi_well.py`: load N wells, interpolate formation surfaces, build combined 3D figure (src/render/multi_well.py)
@@ -66,9 +67,9 @@ reservoir-visualizer/
 - [ ] Smoke test full flow: upload LAS → select formation → render 3D (manual)
 
 ### Phase 5 — Polish and Deploy
-- [ ] Write `requirements.txt` with pinned versions (requirements.txt)
-- [ ] Write `docker-compose.yml` for local run (docker-compose.yml)
-- [ ] Write `docs/01_architecture.md` with Mermaid flow diagram (docs/01_architecture.md)
+- [x] Write `requirements.txt` with pinned versions (2026-04-15)
+- [x] Write `docker-compose.yml` for local run (2026-04-15)
+- [x] Write `docs/01_architecture.md` with Mermaid flow diagram (2026-04-15)
 - [ ] Push to GitHub and validate README renders correctly
 - [ ] Deploy to Hugging Face Spaces (manual step)
 
