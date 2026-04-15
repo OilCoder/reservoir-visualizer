@@ -14,7 +14,7 @@ and renders formation layers colored by petrophysical property inside a Streamli
 | Formation parsing | Custom parser on `~Other` section |
 | Interpolation | scipy.interpolate (IDW / linear) |
 | Language | Python 3.10+ |
-| Demo data | Kansas Geological Survey LAS (Arroyo field) |
+| Demo data | Kansas Geological Survey LAS (El Dorado field) |
 
 ## Structure
 
@@ -45,7 +45,7 @@ reservoir-visualizer/
 - [ ] Explore Arroyo LAS files and document available curves and ~Other section format (src/las/)
 - [ ] Implement `loader.py`: read LAS file, return curves as DataFrame + well metadata dict (src/las/loader.py)
 - [ ] Implement `formation_parser.py`: extract tops/bases dict from ~Other section (src/las/formation_parser.py)
-- [ ] Copy 3 representative Arroyo LAS files to data/demo/ (data/demo/)
+- [x] Add El Dorado field LAS files to data/demo/ (2026-04-15)
 - [ ] Write `test_loader.py` covering: valid file, missing curves, null handling (tests/test_loader.py)
 - [ ] Write `test_formation_parser.py` covering: standard format, missing tops, empty section (tests/test_formation_parser.py)
 
