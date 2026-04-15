@@ -55,9 +55,9 @@ reservoir-visualizer/
 - [x] Implement `single_well.py`: build Plotly 3D figure from one well's formations colored by lithology (2026-04-15)
 - [x] Validate render with a real El Dorado LAS file in a debug script (2026-04-15)
 
-### Phase 3 — Multi-Well Interpolation and Render
-- [ ] Implement `multi_well.py`: load N wells, interpolate formation surfaces, build combined 3D figure (src/render/multi_well.py)
-- [ ] Validate interpolation with 3 Arroyo wells in debug script (debug/dbg_multi_well_render.py)
+### Phase 3 — Multi-Well Interpolation and Render (COMPLETED)
+- [x] Implement `multi_well.py`: load N wells, interpolate formation surfaces, build combined 3D figure (2026-04-15)
+- [x] Validate interpolation with 4 El Dorado wells in debug script (2026-04-15)
 
 ### Phase 4 — Streamlit UI Assembly
 - [ ] Implement `sidebar.py`: file uploader, well selector, property selector (src/ui/sidebar.py)
