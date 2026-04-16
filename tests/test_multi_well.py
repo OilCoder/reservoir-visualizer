@@ -62,11 +62,11 @@ class TestBuildMultiWellFigure:
         """Return type is a Plotly Figure."""
         assert isinstance(build_multi_well_figure(_TWO_WELLS), go.Figure)
 
-    def test_figure_has_surface_and_stick_traces(self):
-        """Figure contains both Surface and Scatter3d traces."""
+    def test_figure_has_mesh3d_and_stick_traces(self):
+        """Figure contains both Mesh3d (formations) and Scatter3d (sticks) traces."""
         fig = build_multi_well_figure(_TWO_WELLS)
         types = {type(t).__name__ for t in fig.data}
-        assert "Surface" in types
+        assert "Mesh3d" in types
         assert "Scatter3d" in types
 
     def test_well_sticks_equal_well_count(self):
@@ -75,24 +75,24 @@ class TestBuildMultiWellFigure:
         sticks = [t for t in fig.data if isinstance(t, go.Scatter3d)]
         assert len(sticks) == 3
 
-    def test_surfaces_for_common_formations_only(self):
-        """Surfaces are created only for formations present in ≥2 wells."""
+    def test_volumes_for_common_formations_only(self):
+        """Mesh3d volumes are created only for formations present in ≥2 wells."""
         fig = build_multi_well_figure(_THREE_WELLS)
-        surfaces = [t for t in fig.data if isinstance(t, go.Surface)]
-        # Oread and Lansing are in all 3 wells; Arbuckle only in A and B → 3 surfaces
-        assert len(surfaces) == 3
+        volumes = [t for t in fig.data if isinstance(t, go.Mesh3d)]
+        # Oread and Lansing are in all 3 wells; Arbuckle only in A and B → 3 volumes
+        assert len(volumes) == 3
 
     def test_custom_formation_names_filter(self):
-        """formation_names argument limits which surfaces are rendered."""
+        """formation_names argument limits which volumes are rendered."""
         fig = build_multi_well_figure(_TWO_WELLS, formation_names=["Oread"])
-        surfaces = [t for t in fig.data if isinstance(t, go.Surface)]
-        assert len(surfaces) == 1
-        assert "Oread" in surfaces[0].name
+        volumes = [t for t in fig.data if isinstance(t, go.Mesh3d)]
+        assert len(volumes) == 1
+        assert "Oread" in volumes[0].name
 
-    def test_z_axis_reversed_in_layout(self):
-        """Z axis has autorange='reversed' so surface sits at top."""
+    def test_z_axis_title_is_elevation(self):
+        """Z axis uses elevation convention (positive up, no reversal)."""
         fig = build_multi_well_figure(_TWO_WELLS)
-        assert fig.layout.scene.zaxis.autorange == "reversed"
+        assert fig.layout.scene.zaxis.title.text == "Elevation (ft)"
 
     def test_single_well_raises(self):
         """Fewer than 2 valid wells raises ValueError."""

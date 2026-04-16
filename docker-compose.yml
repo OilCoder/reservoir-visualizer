@@ -10,6 +10,7 @@ services:
       - ./tests:/app/tests
       - ./debug:/app/debug
       - ./app.py:/app/app.py
+      - ./.streamlit:/app/.streamlit
     environment:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped

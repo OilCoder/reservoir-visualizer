@@ -30,6 +30,8 @@ LITHOLOGY_COLORS: dict[str, str] = {
     "Dolomite":             "#c49a6c",  # brown       (diagenetic carbonate)
     "Dolomite/Chert":       "#a0785a",  # dark brown  (dolomite with chert)
     "Chert":                "#e08060",  # orange-red  (siliceous)
+    "Anhydrite":            "#e8c4e8",  # pale purple (evaporite)
+    "Salt":                 "#f5f0ff",  # near white  (evaporite)
     "Conglomerate":         "#b8860b",  # dark yellow (coarse clastic)
     "Coal":                 "#252525",  # near black  (organic)
     "Unknown":              "#bdbdbd",  # light gray  (fallback)
@@ -67,6 +69,25 @@ FORMATION_LITHOLOGY: dict[str, str] = {
     "Erosional Chert Conglomerate": "Conglomerate",
     "Erosional Mississippian":      "Conglomerate",
     "Mississippian":                "Limestone",
+    "Osage":                        "Limestone",
+    "St. Louis":                    "Limestone",
+    "Ste. Genevieve":               "Limestone",
+    "Meramecian":                   "Limestone",
+    "Chesteran":                    "Limestone",
+
+    # ── Permian / Evaporites ─────────────────────────────────────────────────
+    "Anhydrite":                    "Anhydrite",
+    "Stone Corral":                 "Anhydrite",
+    "Hutchinson Salt":              "Salt",
+    "Wellington":                   "Shale",
+    "Blaine":                       "Anhydrite",
+    "Cedar Hills":                  "Sandstone",
+    "Day Creek":                    "Dolomite",
+
+    # ── Schaben field (Pennsylvanian) ─────────────────────────────────────────
+    "Lansing-Kansas City":          "Limestone/Shale",
+    "Pawnee":                       "Limestone",
+    "Fort Scott":                   "Limestone/Shale",
 
     # ── Ordovician ───────────────────────────────────────────────────────────
     "Arbuckle":                     "Dolomite/Chert",

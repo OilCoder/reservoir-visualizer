@@ -66,6 +66,18 @@ reservoir-visualizer/
 - [x] Create `data/config.yaml` with render settings and demo config (data/config.yaml) (2026-04-15)
 - [x] Smoke test full flow: app boots, responds on :8501, demo data path confirmed (2026-04-15)
 
+### Phase 4b — 3D Render Quality Improvements (COMPLETED)
+- [x] Replace go.Surface with go.Mesh3d volumetric bodies (top + base + side walls) (2026-04-15)
+- [x] Add elevation offset (elev_ft) to well sticks and formation Z coordinates (2026-04-15)
+- [x] Focus Z axis on formation interval instead of full well depth (2026-04-15)
+- [x] Apply dark theme (.streamlit/config.toml) matching petroleum industry tools (2026-04-15)
+- [x] Fix "3D surfaces" metric to count Mesh3d traces (src/ui/viewer.py) (2026-04-15)
+- [x] Switch demo field from El Dorado (18 valid wells, 40%) to Schaben (140 valid, 97%) (2026-04-15)
+- [x] Make demo_field configurable via data/config.yaml (src/ui/sidebar.py) (2026-04-15)
+- [x] Extend lithology_map.py with Schaben and Permian evaporite formations (2026-04-15)
+- [x] Fix collinear-points crash in griddata with try/except fallback to nearest (2026-04-15)
+- [x] Increase well stick width for visibility (src/render/multi_well.py) (2026-04-15)
+
 ### Phase 5 — Polish and Deploy
 - [x] Write `requirements.txt` with pinned versions (2026-04-15)
 - [x] Write `docker-compose.yml` for local run (2026-04-15)

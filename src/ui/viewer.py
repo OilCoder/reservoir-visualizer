@@ -28,7 +28,8 @@ def render_viewer(fig: go.Figure, wells_data: list[dict]) -> None:
         for w in wells_data
         for f in w["formations"]
     })
-    n_surfaces = sum(1 for t in fig.data if type(t).__name__ == "Surface")
+    n_surfaces = sum(1 for t in fig.data if type(t).__name__ in ("Surface", "Mesh3d")
+                     and not isinstance(t, go.Scatter3d))
     depths = [
         w["meta"].get("depth_stop_ft") or 0
         for w in wells_data

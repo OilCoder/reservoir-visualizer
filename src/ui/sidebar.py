@@ -11,8 +11,13 @@ Public functions: render_sidebar
 from pathlib import Path
 
 import streamlit as st
+import yaml
 
-_DEMO_DIR = Path("data/demo/El Dorado")
+with open("data/config.yaml") as _fh:
+    _cfg = yaml.safe_load(_fh)
+
+_DEMO_DIR   = Path("data/demo") / _cfg["app"]["demo_field"]
+_DEMO_LABEL = _cfg["app"]["demo_field"]
 
 
 def render_sidebar(wells_data: list[dict]) -> dict:
@@ -117,7 +122,7 @@ def _render_data_source() -> None:
         if wells:
             st.session_state.wells_data = wells
 
-    if st.button("Load El Dorado demo", use_container_width=True):
+    if st.button(f"Load {_DEMO_LABEL} demo", use_container_width=True):
         with st.spinner("Loading demo wells…"):
             st.session_state.wells_data = _load_demo_wells()
 

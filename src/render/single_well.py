@@ -56,28 +56,47 @@ def build_single_well_figure(
     # ----------------------------------------
     fig = go.Figure(data=traces)
     fig.update_layout(
-        title=dict(text=f"<b>{well_name}</b> — Formation Column", x=0.5),
+        title=dict(
+            text=f"<b>{well_name}</b> — Formation Column",
+            x=0.5, font=dict(color="#c9d1d9", size=15),
+        ),
         scene=dict(
-            xaxis=dict(title="X (ft)", showbackground=False),
-            yaxis=dict(title="Y (ft)", showbackground=False),
+            xaxis=dict(
+                title="", showticklabels=False,
+                showbackground=True, backgroundcolor="#161b22",
+                gridcolor="#30363d",
+            ),
+            yaxis=dict(
+                title="", showticklabels=False,
+                showbackground=True, backgroundcolor="#0d1117",
+                gridcolor="#30363d",
+            ),
             zaxis=dict(
                 title="Depth (ft)",
-                autorange="reversed",        # surface at top, depth increases downward
+                titlefont=dict(color="#8b949e", size=11),
+                tickfont=dict(color="#8b949e", size=10),
+                autorange="reversed",
                 tickvals=_depth_ticks(formations),
                 ticktext=[str(abs(v)) for v in _depth_ticks(formations)],
+                showbackground=True, backgroundcolor="#161b22",
+                gridcolor="#30363d",
             ),
-            bgcolor="white",
+            bgcolor="#0d1117",
             camera=dict(eye=dict(x=1.5, y=1.5, z=0.8)),
             aspectmode="manual",
             aspectratio=dict(x=1, y=1, z=2),
         ),
-        paper_bgcolor="white",
+        paper_bgcolor="#0d1117",
+        font=dict(color="#c9d1d9"),
         margin=dict(l=0, r=0, t=50, b=0),
         showlegend=True,
         legend=dict(
-            title=dict(text="Lithology"),
-            x=1.02,
-            y=0.5,
+            title=dict(text="Lithology", font=dict(color="#8b949e", size=11)),
+            x=1.02, y=0.5,
+            bgcolor="rgba(22,27,34,0.9)",
+            bordercolor="#30363d",
+            borderwidth=1,
+            font=dict(color="#c9d1d9", size=11),
         ),
     )
 
